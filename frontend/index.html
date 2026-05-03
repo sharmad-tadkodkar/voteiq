@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VoteIQ - Gen Z Civic OS</title>
+  
+  <!-- Playful Google Font as a fallback for Wicky Javick -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Mali:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            // Attempt to use Wicky Javick if installed, fallback to Mali (playful Google Font), then sans-serif
+            sans: ['"Wicky Javick"', 'Mali', 'sans-serif'],
+          },
+          colors: {
+            'vote-bg': '#FDFBF7', // Light off-white
+            'vote-green': '#10B981',
+            'vote-orange': '#F97316',
+            'vote-green-dark': '#059669',
+            'vote-orange-dark': '#EA580C',
+          },
+          animation: {
+            'wiggle': 'wiggle 1s ease-in-out infinite',
+            'float': 'float 3s ease-in-out infinite',
+          },
+          keyframes: {
+            wiggle: {
+              '0%, 100%': { transform: 'rotate(-3deg)' },
+              '50%': { transform: 'rotate(3deg)' },
+            },
+            float: {
+              '0%, 100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(-10px)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+    <style>
+    /* Custom scrollbar for a cleaner look */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #94a3b8;
+    }
+    
+    /* 3D Button Press Effect Class */
+    .btn-3d {
+      transition: all 0.1s;
+      box-shadow: 0px 6px 0px 0px rgba(0,0,0,0.2);
+    }
+    .btn-3d:active {
+      transform: translateY(4px);
+      box-shadow: 0px 2px 0px 0px rgba(0,0,0,0.2);
+    }
+  </style>
+</head>
+<body class="bg-vote-bg text-gray-800 min-h-screen selection:bg-vote-orange selection:text-white">
+  <div id="root"></div>
+  <script type="module" src="./index.tsx"></script>
+<script type="module" src="/index.js"></script></body>
+</html>
